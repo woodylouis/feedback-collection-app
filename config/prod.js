@@ -1,4 +1,4 @@
-// prod.js
+// prod.js env var
 
 module.exports = {
   googleClientID: process.env.GOOGLE_CLIENT_ID,
