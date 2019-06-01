@@ -23,21 +23,20 @@ passport.use(
       proxy: true
     },
     // callback
-    (accessToken, refreshToken, profile, done) => {
+    async (accessToken, refreshToken, profile, done) => {
       //   console.log("accessToken", accessToken);
       //   console.log("refreshToken", refreshToken);
       //   console.log("profile", profile);
-      User.findOne({ googleId: profile.id }).then(existingUser => {
-        if (existingUser) {
-          // Already have a record with the give profile ID
-          done(null, existingUser);
-        } else {
-          new User({ googleId: profile.id })
-            .save()
-            // ensure info are up-to-dated when saved to the database
-            .then(user => done(null, user));
-        }
-      });
+      const existingUser = await User.findOne({ googleId: profile.id });
+
+      if (existingUser) {
+        // Already have a record with the give profile ID
+        done(null, existingUser);
+      } else {
+        const user = await new User({ googleId: profile.id }).save();
+        // ensure info are up-to-dated when saved to the database
+        done(null, user);
+      }
     }
   )
 );
