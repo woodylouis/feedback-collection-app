@@ -4,7 +4,7 @@ const cookieSession = require("cookie-session");
 const passport = require("passport");
 const keys = require("./config/keys");
 // "./models/User" and "./services/passport", order is critical. Error will appear if incorrect order
-require("./models/User");
+require("./models/user");
 require("./services/passport");
 
 mongoose.connect(keys.mongoURI);
