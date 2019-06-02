@@ -11,6 +11,7 @@ mongoose.connect(keys.mongoURI);
 
 const app = express();
 
+//middleware
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000, // cookie stays 30 days Maximum
