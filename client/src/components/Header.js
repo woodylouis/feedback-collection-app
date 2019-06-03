@@ -41,6 +41,11 @@ class Header extends Component {
           <ul className="right">
             {/* <a>Login With Google</a> */}
             {this.renderContent()}
+            <li key="4">
+              <a href="https://github.com/woodylouis/feedback-collection-app">
+                Github
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
