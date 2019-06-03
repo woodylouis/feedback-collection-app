@@ -10,7 +10,7 @@ class Mailer extends helper.Mail {
     this.body = new helper.Content("text/html", content);
     this.recipients = this.formatAddresses(recipients);
 
-    this.addContent(this.body);
+    this.addContent(this.body); //helper.Mail built-in function from sendgrid
     this.addClickTracking();
     this.addRecipients();
   }
@@ -28,6 +28,16 @@ class Mailer extends helper.Mail {
 
     trackingSettings.setClickTracking(clickTracking);
     this.addTrackingSettings(trackingSettings);
+  }
+
+  addRecipients() {
+    const personalize = new helper.Personalization();
+
+    this.recipients.forEach(recipient => {
+      personalize.addTo(recipient);
+    });
+
+    this.addPersonalization(personalize);
   }
 }
 
