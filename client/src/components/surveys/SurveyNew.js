@@ -1,5 +1,6 @@
 // SurveyNew: content is from SurveyForm
 import React from "react";
+import { reduxForm } from "redux-form";
 import SurveyForm from "./SurveyForm";
 import SurveyFormReview from "./SurveyFormReview";
 
@@ -29,4 +30,6 @@ class SurveryNew extends React.Component {
   }
 }
 
-export default SurveryNew;
+export default reduxForm({
+  form: "surveyForm"
+})(SurveryNew);
