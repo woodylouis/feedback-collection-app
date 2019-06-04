@@ -1,20 +1,15 @@
-// Show user input
+// Show user input to add input
 import _ from "lodash";
 import React from "react";
 import { reduxForm, Field } from "redux-form";
 import { Link } from "react-router-dom";
 import SurveyField from "./SurveyField";
-
-const FIELDS = [
-  { label: "Survey Title", name: "title" },
-  { label: "Subject", name: "subject" },
-  { label: "Email body", name: "body" },
-  { label: "Recipient", name: "emails" }
-];
+import validateEmails from "../../utils/validateEmails";
+import formFields from "./formFields";
 
 class SurveyForm extends React.Component {
   renderFields() {
-    return _.map(FIELDS, ({ label, name }) => {
+    return _.map(formFields, ({ label, name }) => {
       return (
         <Field
           key={name}
@@ -29,7 +24,7 @@ class SurveyForm extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.props.handleSubmit(values => console.log(values))}>
+        <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
           {this.renderFields()}
           <Link to="/surveys" className="red btn-flat white-text">
             Cancel
@@ -55,7 +50,10 @@ function validate(values) {
   // if (!values.body) {
   //   errors.body = "You must provide email body";
   // }
-  _.each(FIELDS, ({ name }) => {
+
+  errors.emails = validateEmails(values.emails || "");
+
+  _.each(formFields, ({ name }) => {
     if (!values[name]) {
       errors[name] = "You must provide a value";
     }
@@ -66,5 +64,6 @@ function validate(values) {
 
 export default reduxForm({
   validate,
-  form: "surveyForm"
+  form: "surveyForm",
+  destroyOnUnmount: false //keep the input when click Back button
 })(SurveyForm);
