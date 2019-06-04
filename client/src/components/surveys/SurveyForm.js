@@ -1,44 +1,43 @@
 // Show user input
+import _ from "lodash";
 import React from "react";
 import { reduxForm, Field } from "redux-form";
+import { Link } from "react-router-dom";
 import SurveyField from "./SurveyField";
+
+const FIELDS = [
+  { label: "Survey Title", name: "title" },
+  { label: "Subject", name: "subject" },
+  { label: "Email body", name: "body" },
+  { label: "Recipient", name: "emails" }
+];
+
 class SurveyForm extends React.Component {
   renderFields() {
-    return (
-      <div>
+    return _.map(FIELDS, ({ label, name }) => {
+      return (
         <Field
-          label="Survey Title"
-          type="text"
-          name="title"
+          key={name}
           component={SurveyField}
-        />
-        <Field
-          label="Subject"
           type="text"
-          name="title"
-          component={SurveyField}
+          label={label}
+          name={name}
         />
-        <Field
-          label="Email body"
-          type="text"
-          name="title"
-          component={SurveyField}
-        />
-        <Field
-          label="Recipient"
-          type="text"
-          name="title"
-          component={SurveyField}
-        />
-      </div>
-    );
+      );
+    });
   }
   render() {
     return (
       <div>
         <form onSubmit={this.props.handleSubmit(values => console.log(values))}>
           {this.renderFields()}
-          <button type="submit">Submit</button>
+          <Link to="/surveys" className="red btn-flat white-text">
+            Cancel
+          </Link>
+          <button type="submit" className="teal btn-flat right white-text">
+            Next
+            <i className="material-icons right">done</i>
+          </button>
         </form>
       </div>
     );
