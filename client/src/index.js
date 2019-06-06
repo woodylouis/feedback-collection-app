@@ -6,6 +6,7 @@ import { createStore, applyMiddleware } from "redux";
 import reduxThunk from "redux-thunk";
 import App from "./components/App";
 import reducers from "./reducers";
+import M from "materialize-css";
 
 // temp sending email axios instance
 import axios from "axios";
@@ -17,5 +18,12 @@ ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.querySelector("#root")
+  document.querySelector("#root"),
+  document.addEventListener("DOMContentLoaded", function() {
+    var elems = document.querySelectorAll(".fixed-action-btn");
+    M.FloatingActionButton.init(elems, {
+      direction: "left",
+      hoverEnabled: false
+    });
+  })
 );
