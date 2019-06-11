@@ -3,7 +3,7 @@ import React from "react";
 import { reduxForm } from "redux-form";
 import SurveyForm from "./SurveyForm";
 import SurveyFormReview from "./SurveyFormReview";
-
+import SurveyHeader from "./Header";
 class SurveryNew extends React.Component {
   // constructor(props) {
   //   super(props);
@@ -26,7 +26,12 @@ class SurveryNew extends React.Component {
     );
   }
   render() {
-    return <div>{this.renderContent()}</div>;
+    return (
+      <div>
+        <SurveyHeader />
+        {this.renderContent()}
+      </div>
+    );
   }
 }
 

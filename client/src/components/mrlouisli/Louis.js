@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import HeaderImage from "../../images/background_desktop.jpg";
 import SocialNav from "./Social";
+import Navigation from "./navigation";
 const HeaderContainer = styled.div`
   box-shadow: 1px 1px 2px 0px black, 0 0 25px grey, 0 0 5px grey;
   position: relative;
@@ -31,10 +32,10 @@ const Name = styled.p`
   top: 35%;
   left: 50%;
   color: #fff;
-  font-weight: bold;
+  // font-weight: bold;
   -webkit-transform: translateX(-30%);
   transform: translateX(-50%);
-  font-family: "Rock Salt", cursive;
+  font-family: "Permanent Marker", cursive;
 `;
 // Load header image
 class Louis extends React.Component {
@@ -42,10 +43,12 @@ class Louis extends React.Component {
     return (
       <HeaderContainer>
         <Name>
-          Hey! <br />
-          I'm LOUIS
+          Hey!
+          <br />
+          I'm LOUIS LI
+          {/* <Navigation /> */}
         </Name>
-        <SocialNav />
+        {/* <SocialNav /> */}
         <MyHeaderImage src={HeaderImage} alt="header-background" />
       </HeaderContainer>
     );

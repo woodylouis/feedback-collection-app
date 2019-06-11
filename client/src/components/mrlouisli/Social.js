@@ -1,5 +1,6 @@
 import React from "react";
-
+import githubLogo from "../../images/github-logo.png";
+import linkedinLogo from "../../images/linkedin.png";
 class SocialNav extends React.Component {
   render() {
     return (
@@ -9,13 +10,32 @@ class SocialNav extends React.Component {
         </a>
         <ul>
           <li>
-            <a class="waves-effect waves-light btn-floating social github">
-              <i class="fa fa-github">G</i>
+            <a
+              class="btn-floating white"
+              href="https://github.com/woodylouis"
+              target="_blank"
+            >
+              <img
+                src={githubLogo}
+                alt="Louis Github"
+                width="40px"
+                height="40px"
+              />
             </a>
           </li>
           <li>
-            <a class="btn-floating yellow darken-1">
-              <i class="material-icons">format_quote</i>
+            <a
+              class="btn-floating white"
+              href="https://www.linkedin.com/in/mrlouisli"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={linkedinLogo}
+                alt="Louis Linkedin"
+                width="40px"
+                height="40px"
+              />
             </a>
           </li>
           <li>
