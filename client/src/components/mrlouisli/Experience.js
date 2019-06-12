@@ -56,6 +56,10 @@ const CompanyLogo = styled.img`
 `;
 
 const CompanyName = styled.div`
+  @media (max-width: 700px) {
+    padding: 10px 0 10px 0;
+    font-size: 1.5rem;
+  }
   color: #37c;
   font-size: 2em;
 `;
@@ -69,19 +73,22 @@ const Place = styled.div`
   color: grey;
 `;
 
-const JobDetail = styled.div`
+const JobDetail = styled.p`
   color: black;
   font-weight: normal;
   font-size: 100%;
   font-style: normal;
   line-height: 130%;
+  font-family: "Roboto", sans-serif;
 `;
 
 class Experience extends React.Component {
   render() {
     return (
       <div id="experience" className="container">
-        <Heading />
+        <div className="center-align">
+          <Heading />
+        </div>
         {/* NDIA */}
         <div className="row section">
           <div className="col s12 m12 l5">

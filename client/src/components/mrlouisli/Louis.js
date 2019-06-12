@@ -3,6 +3,8 @@ import styled from "styled-components";
 import HeaderImage from "../../images/background_desktop.jpg";
 import Greeting from "./Greeting";
 import Experience from "./Experience";
+import Footer from "./Footer";
+
 const HeaderContainer = styled.div`
   box-shadow: 1px 1px 2px 0px black, 0 0 25px grey, 0 0 5px grey;
   position: relative;
@@ -31,6 +33,7 @@ class Louis extends React.Component {
           <MyHeaderImage src={HeaderImage} alt="header-background" />
         </HeaderContainer>
         <Experience />
+        <Footer />
       </div>
     );
   }

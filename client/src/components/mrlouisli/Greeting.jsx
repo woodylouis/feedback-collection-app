@@ -24,9 +24,11 @@ class Greeting extends React.Component {
     return (
       <div>
         <Name>
-          Hey!
-          <br />
-          I'm LOUIS LI
+          <a className="grey-text text-lighten-3" href="#experience">
+            Hey!
+            <br />
+            I'm LOUIS LI
+          </a>
         </Name>
       </div>
     );
