@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import SocialNav from "../common/Social";
 const Tiktok = styled.div`
   font-size: 1.75rem;
 `;
@@ -36,6 +36,7 @@ class Clock extends React.Component {
             {h % 12}:{m < 10 ? "0" + m : m}:{s < 10 ? "0" + s : s}{" "}
             {h < 12 ? "am" : "pm"}
           </Tiktok>
+          <SocialNav />
         </div>
       </footer>
     );
