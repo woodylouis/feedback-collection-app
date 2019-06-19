@@ -1,6 +1,5 @@
 import React from "react";
-import githubLogo from "../../images/github-logo.png";
-import linkedinLogo from "../../images/linkedin.png";
+
 class SocialNav extends React.Component {
   render() {
     return (

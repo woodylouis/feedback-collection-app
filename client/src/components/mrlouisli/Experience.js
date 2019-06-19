@@ -15,7 +15,7 @@ const csiro = {
   imgSrc: CSIROlogo,
   company: "CSIRO Land and Water",
   title: "Python Developer",
-  when: "2018",
+  when: "April 2018 - Oct 2018",
   place: "Dutton Park, Brisbane",
   detail:
     "The goals of my project - 'Sniffing for Services' were to make a web app in Django for Data scientists to support their research in CSIRO. The project is to visualise the use of THREED servers and capture these servers' meta from such kinds of data servers."
@@ -25,7 +25,7 @@ const griffith = {
   imgSrc: GriffithLogo,
   company: "Griffith University",
   title: "MIT in Computer Science",
-  when: "2018",
+  when: "2017 - 2018",
   place: "Gold Coast",
   detail:
     "Griffith University presented unprecedented scale and diversity of opportunity. My two years of phenomenal professors across the disciplines pushed me to expand, challenge, and adjust my worldview. My experience dancing with project management showed me the power of empathetic leadership and expanded my artistic comfort zone. My tenure throwing major, campus-wide events validated that quality stems from attention to detail. My engagement in Griffith's tech & innovation initiatives exercised my creative muscle, sparked my obsession with design, and strengthened my tolerance to adversity."
@@ -34,8 +34,8 @@ const griffith = {
 const ndia = {
   imgSrc: NDIALogo,
   company: "Nation Disability Insurance Agency",
-  title: "Software Engineer",
-  when: "Since 2018",
+  title: "Software Developer",
+  when: "Since Mid 2018",
   place: "Chermside",
   detail:
     "My team works on building amazing user experiences for NDIS employees. I helped carry out the top-to-bottom design and implementation of PANDA's UI, and currently work as a Software Engineer."
@@ -103,6 +103,7 @@ class Experience extends React.Component {
             <JobDetail>{ndia.detail}</JobDetail>
           </div>
         </div>
+        <hr />
         {/* CSIRO */}
         <div className="row section">
           <div className="col s12 m12 l5">
@@ -117,6 +118,7 @@ class Experience extends React.Component {
             <JobDetail>{csiro.detail}</JobDetail>
           </div>
         </div>
+        <hr />
         {/* Griffith University */}
         <div className="row section">
           <div className="col s12 m12 l5">
